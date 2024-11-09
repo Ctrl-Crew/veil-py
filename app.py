@@ -1,7 +1,7 @@
 
 from flask import Flask, jsonify, request
 
-from lib import ocr,meds,cert
+from lib import ocr,meds,cert,recommendation
 
 app = Flask(__name__)
 
@@ -31,3 +31,21 @@ def verify_cert():
         return {"verified": True}
     else:
         return {"verified": False}
+    
+@app.route("/get_recommendation", methods=["POST"])
+def get_recommendation():
+    data = request.get_json()
+    problem = data.get("problem")
+    
+    if not problem:
+        return jsonify({"error": "Please provide a problem description."}), 400
+    response = recommendation.recommend_doctor(problem)
+    
+    if isinstance(response, tuple):  
+        return jsonify(response[0]), response[1]
+    
+    return jsonify(response)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
