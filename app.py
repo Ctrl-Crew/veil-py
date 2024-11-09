@@ -1,9 +1,11 @@
 
 from flask import Flask, jsonify, request
+import flask_cors
 
 from lib import ocr,meds,cert,recommendation
 
 app = Flask(__name__)
+flask_cors.CORS(app)
 
 @app.route("/")
 def hello_world():
