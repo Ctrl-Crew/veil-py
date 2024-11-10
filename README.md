@@ -87,4 +87,10 @@ This project is equipped with a continuous integration and continuous deployment
 - Add more models as deemed necessary to automate a wode range of tasks and to provide the user a rich user experience.
 
 
+## PROPER TESTING.
+
+![PHOTO-2024-11-10-00-08-36](https://github.com/user-attachments/assets/122498f5-b9f0-4d91-9e86-6a6d255dd9d7)
+
+
+![PHOTO-2024-11-09-18-14-21](https://github.com/user-attachments/assets/37d22d25-cb86-494c-8937-069bfbfa1948)
 
